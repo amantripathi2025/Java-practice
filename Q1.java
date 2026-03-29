@@ -1,33 +1,12 @@
-class Animal {
-     void speak() {
-         System.out.println("Animal make sound");
-     }
- }
+package AssignmentException;
 
-    class Dog extends Animal{
-        @Override
-                void speak(){
-            super.speak();
-            System.out.println("Dog woof");
+public class Q1 {
+    public static void main(String[] args) {
+        int[] arr = {10, 20, 30, 40, 50};
+        try {
+            System.out.println(arr[9]); // 10th element (index 9)
+        } catch (ArrayIndexOutOfBoundsException e) {
+            System.out.println("Exception: " + e);
         }
     }
-
-    class Cat extends Animal{
-        @Override
-        void speak() {
-            super.speak();
-            System.out.println("Cate Meow");
-        }
-    }
-    public class Q1 {
-        public static void main(String[] args) {
-            Animal d = new Dog();
-            Animal c = new Cat();
-            d .speak();
-            System.out.println("-----------------");
-            c.speak();
-
-        }
-    }
-
-
+}
