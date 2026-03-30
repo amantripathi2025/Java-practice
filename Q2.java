@@ -1,31 +1,17 @@
-class Vehicle{
-    String brand;
-    int speed;
+package AssignmentException;
 
-    public Vehicle(int speed, String brand) {
-        this.speed = speed;
-        this.brand = brand;
-    }
-    void info(){
-        System.out.println("Brand: " +brand+ " Speed: " +speed);
-    }
-}
-
-class Car extends Vehicle{
-    Car(String brand, int speed){
-        super( speed, brand);
-    }
-    void honk(){
-        System.out.println(brand+" Car sounds: PEEEEEEEE");
-    }
-}
-
-
+import java.util.Scanner;
 
 public class Q2 {
-    static void main() {
-        Car c = new Car("Mercedes", 200);
-        c.info();
-        c.honk();
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        try {
+            System.out.print("Enter an integer: ");
+            int num = Integer.parseInt(sc.nextLine());
+            System.out.println("You entered: " + num);
+        } catch (NumberFormatException e) {
+            System.out.println("Exception type: NumberFormatException");
+            System.out.println("Message: " + e.getMessage());
+        }
     }
 }
