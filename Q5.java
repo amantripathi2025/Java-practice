@@ -1,38 +1,18 @@
-package Basic;
-
-interface Printable{
-    void print();
-}
-class Document implements Printable{
-    String title;
-    Document(String title){
-        this.title = title;
-    }
-    @Override
-    public void print(){
-        System.out.println("Printing Basic.Document: "+title);
-    }
-}
-
-class Photo implements Printable{
-    String filename;
-    Photo(String filename){
-            this.filename = filename;
-    }
-    @Override
-    public void print(){
-        System.out.println("My photo is store in: "+filename);
-    }
-}
-
+package AssignmentException;
 
 public class Q5 {
-    static void main() {
-        Printable d = new Document("Resume.pdf");
-        Printable p = new Photo("Image.jpg");
-
-        d.print();
-        p.print();
+    public static void main(String[] args) {
+        int[] result = new int[1];
+        try {
+            int a = 20, b = 0;
+            result[0] = a / b;         // ArithmeticException if b = 0
+            System.out.println("Result stored: " + result[0]);
+        } catch (ArithmeticException e) {
+            System.out.println("Exception: " + e.getMessage());
+            result[0] = -1;            // Store fallback value
+        } finally {
+            System.out.println("Finally block executed.");
+            System.out.println("Element in array: " + result[0]);
         }
     }
-
+}
