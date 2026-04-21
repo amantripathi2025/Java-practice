@@ -1,34 +1,44 @@
-package Intermediate;
+package ProgramsJavaCollege;
 
-class Person{
-    String name;
-    Person(String name){
-        this.name = name;
-    }
+import java.util.Scanner;
 
-    void introduce(){
-        System.out.println("Hello I'm: "+name);
+class DivisionByZero extends Exception{
+    DivisionByZero(String msg){
+        super(msg);
     }
 }
-
-class Student extends Person{
-    String course;
-    Student(String course, String name){
-        super(name);
-        this.course = course;
+class Calculation{
+    int a ,b, c;
+    Scanner input = new Scanner(System.in);
+    void getInputs(){
+        System.out.print("Enter a number: ");
+        a = input.nextInt();
+        System.out.print("Enter b number: ");
+        b = input.nextInt();
     }
-
-    @Override
-    void introduce(){
-        super.introduce();
-        System.out.println("And my course is: " +course);
+    void divide(){
+        System.out.println(a+" numerator "+b +" denominator");
+        try {
+            if (b == 0)
+                throw new DivisionByZero("Invalid input\n" +
+                        "Divide by zero is not allowed\n" +
+                        "Please enter another number rather than zero\n" +
+                        "Thank you!!");
+            c = a / b;
+            System.out.println(a + " / " + b + " = " + c  );
+        } catch (DivisionByZero e) {
+            System.out.println(e.getMessage());
+        }
+        finally {
+            System.out.println("Demo of division by zero exception");
+        }
     }
 }
-
-
 public class Q9 {
-    static void main() {
-        Student s = new Student("Computer Science and Engineering","Aman");
-        s.introduce();
+    public static void main(String[] args) {
+        Calculation c = new Calculation();
+
+        c.getInputs();
+        c.divide();
     }
 }
