@@ -13,8 +13,7 @@ public class Armstrongoneto100 {
                 System.out.print(i + ", " );
                
             }
-            
-            i++;
+                     i++;
         }
        System.out.print("is an armstrong number ");
     }
