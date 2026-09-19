@@ -1,5 +1,4 @@
 package in.kgcoding;
-
  class StringManipulation {
      public static void main(String[]args) {
          String firstName = "Aman";
