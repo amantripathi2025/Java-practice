@@ -9,7 +9,6 @@ public class BankAccount {
         AccountNumber = accountNumber;
         accountHolderName = accountHolderName;
     }
-
     public void depositMoney(double money){
         if(money<=0){
             System.out.println("Invalid deposit");
